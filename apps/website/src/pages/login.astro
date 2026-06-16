@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const previewItems = [
+  "Seminaranfragen prüfen",
+  "Angebote vorbereiten",
+  "Coaches auswählen",
+  "Firmenhistorie ansehen",
+];
+---
+
+<BaseLayout title="Login-Demo | [Submarke]" bodyClass="login-page">
+  <main class="login-shell">
+    <section class="login-panel">
+      <div class="login-copy">
+        <p class="eyebrow">App-Ausblick</p>
+        <h1>Ein Login für das spätere Verwaltungssystem</h1>
+        <p>
+          Diese Seite ist eine reine Demo. Sie zeigt, wie der Einstieg in die
+          spätere App wirken könnte: intern zuerst, später mit Firmen- und
+          Coach-Zugängen.
+        </p>
+        <div class="login-preview-list">
+          {previewItems.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+
+      <form class="login-card" aria-label="Login-Demo">
+        <span class="demo-badge">Nicht produktiv</span>
+        <h2>Anmelden</h2>
+        <label>
+          E-Mail
+          <input type="email" value="demo@donner-partner.de" readonly />
+        </label>
+        <label>
+          Passwort
+          <input type="password" value="demodemo" readonly />
+        </label>
+        <button class="button" type="button">Dashboard-Demo öffnen</button>
+        <p>
+          Kein echter Login, keine Datenbank, keine personenbezogenen Daten.
+        </p>
+      </form>
+    </section>
+
+    <section class="dashboard-teaser" aria-label="Dashboard-Demo">
+      <article>
+        <span>Heute</span>
+        <strong>4 Seminaranfragen</strong>
+      </article>
+      <article>
+        <span>Entwurf</span>
+        <strong>2 Angebote</strong>
+      </article>
+      <article>
+        <span>Matching</span>
+        <strong>86 Punkte</strong>
+      </article>
+    </section>
+  </main>
+</BaseLayout>

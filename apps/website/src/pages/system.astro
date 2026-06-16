@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
+
+const modules = [
+  "Firmen und Kontakte",
+  "Seminare und Aufträge",
+  "Coaches und Dozenten",
+  "Teilnehmende und Buchungen",
+  "Angebote und Verträge",
+  "Score-basiertes Matching",
+];
+---
+
+<BaseLayout title="Systemausblick | [Submarke]">
+  <main class="subpage">
+    <section class="page-hero page-hero--system">
+      <p class="eyebrow">Systemausblick</p>
+      <h1>Nach der Website folgt ein eigenes Verwaltungssystem</h1>
+      <p>
+        Der Prototyp zeigt nur die Richtung. Das spätere System soll unabhängig
+        arbeiten, eigene Daten nutzen und interne Abläufe schrittweise
+        vereinfachen.
+      </p>
+      <a class="button" href={url("login")}>Login-Demo ansehen</a>
+    </section>
+
+    <section class="module-board">
+      {modules.map((module) => <article>{module}</article>)}
+    </section>
+
+    <section class="showcase-strip">
+      <div>
+        <p class="eyebrow">Bewusst noch nicht produktiv</p>
+        <h2>Keine echte Datenbank, keine echten Accounts</h2>
+      </div>
+      <p>
+        Für den 01.07. geht es um das Bild: Wie könnte sich die Website in ein
+        professionelles System weiterentwickeln?
+      </p>
+    </section>
+  </main>
+</BaseLayout>

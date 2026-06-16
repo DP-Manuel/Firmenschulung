@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+---
+
+<BaseLayout title="Kontakt | [Submarke]">
+  <main class="subpage">
+    <section class="contact-page">
+      <div>
+        <p class="eyebrow">Kontakt</p>
+        <h1>Welcher Einstieg passt zu Ihrem Unternehmen?</h1>
+        <p>
+          Für die Präsentation bleibt dies eine visuelle Vorschau. Eine echte
+          Formularverarbeitung startet erst nach Datenschutz- und
+          Prozessfreigabe.
+        </p>
+      </div>
+      <form class="contact-form" aria-label="Kontaktformular Demo">
+        <label>
+          Name
+          <input name="name" type="text" placeholder="Vor- und Nachname" />
+        </label>
+        <label>
+          Unternehmen
+          <input name="company" type="text" placeholder="Unternehmen" />
+        </label>
+        <label>
+          E-Mail
+          <input name="email" type="email" placeholder="name@unternehmen.de" />
+        </label>
+        <label>
+          Interesse
+          <select name="interest">
+            <option>Firmenseminar</option>
+            <option>Personalbedarf</option>
+            <option>Kooperation</option>
+          </select>
+        </label>
+        <label class="contact-form__wide">
+          Nachricht
+          <textarea name="message" rows="5" placeholder="Worum geht es?"></textarea>
+        </label>
+        <button class="button contact-form__wide" type="button">Demo-Anfrage anzeigen</button>
+      </form>
+    </section>
+  </main>
+</BaseLayout>

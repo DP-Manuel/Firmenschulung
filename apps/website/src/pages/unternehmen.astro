@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
+
+const cards = [
+  {
+    title: "Seminar als Einstieg",
+    text: "Ein konkretes Thema schafft Gesprächsanlass und Vertrauen.",
+  },
+  {
+    title: "Bedarf sichtbar machen",
+    text: "Offene Rollen, fehlende Kompetenzen und Einarbeitungshürden werden strukturiert erfasst.",
+  },
+  {
+    title: "Qualifizierung anbinden",
+    text: "Bestehende Maßnahmen werden auf reale Unternehmensanforderungen ausgerichtet.",
+  },
+  {
+    title: "Passende Menschen vorstellen",
+    text: "Vermittlung wird vorbereitet, ohne bereits eine technische Plattform zu versprechen.",
+  },
+];
+---
+
+<BaseLayout title="Für Unternehmen | [Submarke]">
+  <main class="subpage">
+    <section class="page-hero">
+      <p class="eyebrow">Für Unternehmen</p>
+      <h1>Weiterbildung, die Personalbedarf ernst nimmt</h1>
+      <p>
+        Unternehmen erhalten nicht nur ein Seminar, sondern einen strukturierten
+        Einstieg in Qualifizierung, Zusammenarbeit und spätere Vermittlung.
+      </p>
+      <a class="button" href={url("kontakt")}>Gespräch anfragen</a>
+    </section>
+
+    <section class="feature-grid">
+      {cards.map((card) => (
+        <article class="feature-card">
+          <h2>{card.title}</h2>
+          <p>{card.text}</p>
+        </article>
+      ))}
+    </section>
+
+    <section class="showcase-strip">
+      <div>
+        <p class="eyebrow">Chefetagen-Botschaft</p>
+        <h2>Ein Angebot, das Umsatzchance und Fachkräfteperspektive verbindet</h2>
+      </div>
+      <p>
+        Die erste Website verkauft Seminare. Das spätere System hilft dabei,
+        Aufträge, Coaches, Firmenhistorie, Angebote und Verträge sauber zu
+        verwalten.
+      </p>
+    </section>
+  </main>
+</BaseLayout>

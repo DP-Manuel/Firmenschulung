@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const steps = [
+  "Bestehende Maßnahmen und Kompetenzen erfassen",
+  "Unternehmensbedarf aus Seminaren und Gesprächen ableiten",
+  "Teilnehmende gezielt vorbereiten",
+  "Profile nachvollziehbar mit Anforderungen vergleichen",
+  "Einstieg begleiten und Rückmeldung einholen",
+];
+---
+
+<BaseLayout title="Qualifizierung | [Submarke]">
+  <main class="subpage">
+    <section class="page-hero">
+      <p class="eyebrow">Qualifizierung & Vermittlung</p>
+      <h1>Bestehende Stärken werden mit echtem Bedarf verbunden</h1>
+      <p>
+        Der spätere Prozess soll nicht neue Maßnahmen erfinden, sondern
+        vorhandene Kurse, Coachings und Qualifizierungspfade besser auf
+        Unternehmensanforderungen ausrichten.
+      </p>
+    </section>
+
+    <section class="timeline-list">
+      {steps.map((step, index) => (
+        <article>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <p>{step}</p>
+        </article>
+      ))}
+    </section>
+  </main>
+</BaseLayout>

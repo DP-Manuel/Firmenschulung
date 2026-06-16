@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
+
+const topics = [
+  "KI im Büroalltag",
+  "Kommunikation im Team",
+  "Führung und Verantwortung",
+  "Vertrieb und Kundengespräch",
+  "Mitarbeitendenbindung",
+  "Interkulturelle Zusammenarbeit",
+];
+---
+
+<BaseLayout title="Seminare | [Submarke]">
+  <main class="subpage">
+    <section class="page-hero page-hero--accent">
+      <p class="eyebrow">Seminare</p>
+      <h1>Der erste konkrete Anlass für Zusammenarbeit</h1>
+      <p>
+        Seminare sind der sichtbare Einstieg: direkt nutzbar für Unternehmen,
+        niedrigschwellig im Kontakt und anschlussfähig für spätere
+        Qualifizierungs- und Personalthemen.
+      </p>
+      <a class="button" href={url("kontakt")}>Seminar anfragen</a>
+    </section>
+
+    <section class="topic-wall">
+      {topics.map((topic) => <article>{topic}</article>)}
+    </section>
+
+    <section class="split-panel">
+      <div>
+        <p class="eyebrow">Prototyp-Fokus</p>
+        <h2>Bis 01.07. steht das Seminarangebot im Vordergrund</h2>
+      </div>
+      <p>
+        Die App-Vision bleibt sichtbar, aber die Website muss zuerst erklären,
+        warum Unternehmen ein Gespräch über Seminare und Personalperspektiven
+        führen sollten.
+      </p>
+    </section>
+  </main>
+</BaseLayout>

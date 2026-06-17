@@ -8,11 +8,11 @@ import "../styles/global.css";
     <section class="contact-page">
       <div>
         <p class="eyebrow">Kontakt</p>
-        <h1>Welcher Einstieg passt zu Ihrem Unternehmen?</h1>
+        <h1>Kostenfreies Erstgespräch zur Bedarfsanalyse</h1>
         <p>
-          Für die Präsentation bleibt dies eine visuelle Vorschau. Eine echte
-          Formularverarbeitung startet erst nach Datenschutz- und
-          Prozessfreigabe.
+          Ob Firmenschulung, Personalengpass oder Qualifizierungsbedarf: Der
+          erste Schritt ist ein kurzes Gespräch. Für die Präsentation bleibt
+          dieses Formular eine visuelle Vorschau ohne echte Verarbeitung.
         </p>
       </div>
       <form class="contact-form" aria-label="Kontaktformular Demo">
@@ -25,22 +25,23 @@ import "../styles/global.css";
           <input name="company" type="text" placeholder="Unternehmen" />
         </label>
         <label>
-          E-Mail
-          <input name="email" type="email" placeholder="name@unternehmen.de" />
+          Telefon
+          <input name="phone" type="tel" placeholder="Telefonnummer" />
         </label>
         <label>
-          Interesse
+          Anliegen
           <select name="interest">
-            <option>Firmenseminar</option>
-            <option>Personalbedarf</option>
-            <option>Kooperation</option>
+            <option>Firmenschulung</option>
+            <option>Bedarfsanalyse</option>
+            <option>Personalqualifizierung</option>
+            <option>Vermittlung</option>
           </select>
         </label>
         <label class="contact-form__wide">
           Nachricht
           <textarea name="message" rows="5" placeholder="Worum geht es?"></textarea>
         </label>
-        <button class="button contact-form__wide" type="button">Demo-Anfrage anzeigen</button>
+        <button class="button contact-form__wide" type="button">Demo-Erstgespräch anfragen</button>
       </form>
     </section>
   </main>

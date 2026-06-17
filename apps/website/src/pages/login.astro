@@ -3,10 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
 const previewItems = [
+  "Firmen, Coaches und Stellen pflegen",
   "Seminaranfragen prüfen",
-  "Angebote vorbereiten",
-  "Coaches auswählen",
-  "Firmenhistorie ansehen",
+  "Angebote und Verträge vorbereiten",
+  "Feedback nach Seminaren auswerten",
 ];
 ---
 
@@ -15,11 +15,13 @@ const previewItems = [
     <section class="login-panel">
       <div class="login-copy">
         <p class="eyebrow">App-Ausblick</p>
-        <h1>Ein Login für das spätere Verwaltungssystem</h1>
+        <h1>Eine Demo für das spätere Verwaltungssystem</h1>
         <p>
           Diese Seite ist eine reine Demo. Sie zeigt, wie der Einstieg in die
-          spätere App wirken könnte: intern zuerst, später mit Firmen- und
-          Coach-Zugängen.
+          spätere App wirken könnte: zuerst für interne Abläufe rund um
+          Firmen, Coaches, Stellen, Seminaranfragen, Angebote, Verträge und
+          Feedback. Echte Redaktionsrechte und externe Zugänge bleiben fachlich
+          noch offen.
         </p>
         <div class="login-preview-list">
           {previewItems.map((item) => <span>{item}</span>)}
@@ -47,15 +49,15 @@ const previewItems = [
     <section class="dashboard-teaser" aria-label="Dashboard-Demo">
       <article>
         <span>Heute</span>
-        <strong>4 Seminaranfragen</strong>
+        <strong>4 Firmenanfragen</strong>
       </article>
       <article>
-        <span>Entwurf</span>
-        <strong>2 Angebote</strong>
+        <span>Redaktion</span>
+        <strong>Coachprofile</strong>
       </article>
       <article>
-        <span>Matching</span>
-        <strong>86 Punkte</strong>
+        <span>Stellen</span>
+        <strong>regelbasiert</strong>
       </article>
     </section>
   </main>

@@ -262,7 +262,8 @@ p {
 .feature-grid,
 .topic-wall,
 .module-board,
-.dashboard-teaser {
+.dashboard-teaser,
+.coach-grid {
   display: grid;
   gap: 14px;
 }
@@ -458,6 +459,50 @@ p {
   margin-bottom: 70px;
 }
 
+.coach-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 70px;
+}
+
+.coach-card {
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+}
+
+.coach-card__media {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(0, 156, 166, 0.18), rgba(255, 127, 87, 0.2)),
+    var(--color-soft);
+}
+
+.coach-card__media span {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  background: var(--color-white);
+  color: var(--color-pantone);
+  font-weight: 900;
+  box-shadow: var(--shadow);
+}
+
+.coach-card h2 {
+  margin-bottom: 8px;
+  font-size: 1.65rem;
+  line-height: 1.08;
+}
+
+.coach-card strong {
+  display: block;
+  margin-bottom: 12px;
+}
+
 .timeline-list {
   display: grid;
   gap: 14px;
@@ -646,7 +691,8 @@ p {
   .process-band,
   .feature-grid,
   .topic-wall,
-  .module-board {
+  .module-board,
+  .coach-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -692,6 +738,7 @@ p {
   .feature-grid,
   .topic-wall,
   .module-board,
+  .coach-grid,
   .benefit-grid,
   .contact-form,
   .login-preview-list,

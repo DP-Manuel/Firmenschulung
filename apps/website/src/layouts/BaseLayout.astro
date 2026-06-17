@@ -7,7 +7,7 @@ interface Props {
 
 const {
   title,
-  description = "Modernes Website-Konzept fuer Firmenseminare, Qualifizierung und Personalperspektiven.",
+  description = "Praxisnahe Firmenschulungen und gezielte Personalqualifizierung fuer KMU in Tauberfranken und Wuerzburg.",
   bodyClass = "",
 } = Astro.props;
 
@@ -34,6 +34,7 @@ const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
       <nav class="nav" aria-label="Hauptnavigation">
         <a href={url("unternehmen")}>Für Unternehmen</a>
         <a href={url("seminare")}>Seminare</a>
+        <a href={url("coaches")}>Coaches</a>
         <a href={url("qualifizierung")}>Qualifizierung</a>
         <a href={url("system")}>System</a>
       </nav>
@@ -51,6 +52,8 @@ const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
       <nav aria-label="Footer">
         <a href={url("unternehmen")}>Für Unternehmen</a>
         <a href={url("seminare")}>Seminare</a>
+        <a href={url("coaches")}>Coaches</a>
+        <a href={url("qualifizierung")}>Qualifizierung</a>
         <a href={url("login")}>Login-Demo</a>
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>

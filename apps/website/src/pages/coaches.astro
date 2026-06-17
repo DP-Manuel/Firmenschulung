@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
+
+const coaches = [
+  {
+    name: "Coach-Profil 01",
+    role: "Führung & Mitarbeiterbindung",
+    focus: "Teamverantwortung, Kommunikation, Veränderung",
+    text: "Platzhalterprofil für eine fachliche Person, die KMU praxisnah begleitet. Echte Namen, Bilder und Qualifikationen werden erst nach Freigabe veröffentlicht.",
+  },
+  {
+    name: "Coach-Profil 02",
+    role: "Vertrieb & Kundenkommunikation",
+    focus: "Beratung, Kundengespräch, Auftreten",
+    text: "Demo-Karte für spätere Coachdaten. Die Profile sollen Unternehmen Orientierung geben, ohne im Prototyp personenbezogene Daten zu verarbeiten.",
+  },
+  {
+    name: "Coach-Profil 03",
+    role: "Prävention & Resilienz",
+    focus: "Belastung, Burnoutprävention, Arbeitsfähigkeit",
+    text: "Die spätere Pflege soll über einen klaren Redaktionsworkflow laufen, damit Inhalte nicht direkt im Code bearbeitet werden müssen.",
+  },
+];
+---
+
+<BaseLayout title="Coaches | [Submarke]">
+  <main class="subpage">
+    <section class="page-hero page-hero--accent">
+      <p class="eyebrow">Coaches & Dozenten</p>
+      <h1>Menschen hinter den Firmenschulungen sichtbar machen</h1>
+      <p>
+        Die Coach-Seite zeigt, wie fachliche Profile später vorgestellt werden
+        können. Für den Prototyp bleiben die Profile bewusst anonymisiert:
+        echte Namen, Fotos, Rollen und Texte brauchen vorher Freigabe.
+      </p>
+      <a class="button" href={url("kontakt")}>Coach-Einsatz anfragen</a>
+    </section>
+
+    <section class="coach-grid" aria-label="Coach-Profilbeispiele">
+      {coaches.map((coach) => (
+        <article class="coach-card">
+          <div class="coach-card__media" aria-hidden="true">
+            <span>{coach.name.replace("Coach-Profil ", "")}</span>
+          </div>
+          <div>
+            <p class="eyebrow">Demo-Profil</p>
+            <h2>{coach.name}</h2>
+            <strong>{coach.role}</strong>
+            <p>{coach.focus}</p>
+            <p>{coach.text}</p>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="showcase-strip">
+      <div>
+        <p class="eyebrow">Redaktionsausblick</p>
+        <h2>Später nicht direkt im Code pflegen</h2>
+      </div>
+      <p>
+        Coachprofile sollen langfristig strukturiert gepflegt werden: Name,
+        Rolle, Themenschwerpunkte, Qualifikation, Einsatzregion, Bild und
+        Freigabestatus. Ob das über CMS, Webapp oder API passiert, bleibt eine
+        Entscheidung vor dem Live-Betrieb.
+      </p>
+    </section>
+  </main>
+</BaseLayout>

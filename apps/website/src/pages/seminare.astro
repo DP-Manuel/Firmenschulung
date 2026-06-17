@@ -8,12 +8,22 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
 
 const topics = [
-  "KI im Büroalltag",
-  "Kommunikation im Team",
-  "Führung und Verantwortung",
-  "Vertrieb und Kundengespräch",
-  "Mitarbeitendenbindung",
-  "Interkulturelle Zusammenarbeit",
+  {
+    title: "Führung & Mitarbeiterbindung",
+    text: "Für KMU im Wandel, die Fluktuation senken und Verantwortung im Team stärken wollen.",
+  },
+  {
+    title: "Vertrieb & Kundenkommunikation",
+    text: "Für Teams mit direktem Kundenkontakt, Beratungssituationen und erklärungsbedürftigen Leistungen.",
+  },
+  {
+    title: "Rhetorik & Konfliktmanagement",
+    text: "Für klare Gespräche, sichere Kommunikation und lösungsorientierten Umgang mit Reibung.",
+  },
+  {
+    title: "Prävention & Resilienz",
+    text: "Für Belastungssituationen, Burnoutprävention und gesunde Arbeitsfähigkeit im Alltag.",
+  },
 ];
 ---
 
@@ -21,28 +31,33 @@ const topics = [
   <main class="subpage">
     <section class="page-hero page-hero--accent">
       <p class="eyebrow">Seminare</p>
-      <h1>Der erste konkrete Anlass für Zusammenarbeit</h1>
+      <h1>Firmenschulungen als direkter Einstieg</h1>
       <p>
-        Seminare sind der sichtbare Einstieg: direkt nutzbar für Unternehmen,
-        niedrigschwellig im Kontakt und anschlussfähig für spätere
-        Qualifizierungs- und Personalthemen.
+        Unsere Seminare sind praxisnah, regional und als Inhouse-Schulung
+        flexibel anpassbar. Sie schaffen sofort nutzbaren Mehrwert und öffnen
+        das Gespräch über Personalbedarf und Qualifizierung.
       </p>
-      <a class="button" href={url("kontakt")}>Seminar anfragen</a>
+      <a class="button" href={url("kontakt")}>Individuelles Angebot anfragen</a>
     </section>
 
     <section class="topic-wall">
-      {topics.map((topic) => <article>{topic}</article>)}
+      {topics.map((topic) => (
+        <article>
+          <h2>{topic.title}</h2>
+          <p>{topic.text}</p>
+        </article>
+      ))}
     </section>
 
     <section class="split-panel">
       <div>
         <p class="eyebrow">Prototyp-Fokus</p>
-        <h2>Bis 01.07. steht das Seminarangebot im Vordergrund</h2>
+        <h2>Auf einen Blick: Zielgruppe, Format, Dauer und Ort</h2>
       </div>
       <p>
-        Die App-Vision bleibt sichtbar, aber die Website muss zuerst erklären,
-        warum Unternehmen ein Gespräch über Seminare und Personalperspektiven
-        führen sollten.
+        Für den ersten Prototyp bleiben Preise bewusst bei "individuelles
+        Angebot". Sichtbar werden dagegen Zielgruppe, Inhouse-/Präsenzformat,
+        flexible Dauer und der regionale Schwerpunkt im Raum Würzburg.
       </p>
     </section>
   </main>

@@ -8,12 +8,15 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
 
 const modules = [
-  "Firmen und Kontakte",
-  "Seminare und Aufträge",
-  "Coaches und Dozenten",
-  "Teilnehmende und Buchungen",
-  "Angebote und Verträge",
-  "Score-basiertes Matching",
+  "Firmenprofile",
+  "Coachprofile",
+  "Stellenanzeigen",
+  "Seminaranfragen",
+  "Angebote",
+  "Vermittlungsvereinbarungen",
+  "Feedback nach Seminaren",
+  "Regelbasiertes Matching",
+  "Redaktionsworkflow",
 ];
 ---
 
@@ -21,11 +24,12 @@ const modules = [
   <main class="subpage">
     <section class="page-hero page-hero--system">
       <p class="eyebrow">Systemausblick</p>
-      <h1>Nach der Website folgt ein eigenes Verwaltungssystem</h1>
+      <h1>Ein späteres System für Firmen, Coaches und Stellen</h1>
       <p>
         Der Prototyp zeigt nur die Richtung. Das spätere System soll unabhängig
-        arbeiten, eigene Daten nutzen und interne Abläufe schrittweise
-        vereinfachen.
+        arbeiten, eigene Daten nutzen und interne Abläufe rund um Seminare,
+        Firmen, Coachprofile, Stellen, Verträge, Feedback und Vermittlung
+        schrittweise vereinfachen.
       </p>
       <a class="button" href={url("login")}>Login-Demo ansehen</a>
     </section>
@@ -41,7 +45,9 @@ const modules = [
       </div>
       <p>
         Für den 01.07. geht es um das Bild: Wie könnte sich die Website in ein
-        professionelles System weiterentwickeln?
+        professionelles System weiterentwickeln? Firmen-, Coach-, Stellen- und
+        interne Rollenfunktionen bleiben noch offen und werden nicht als final
+        gezeigt.
       </p>
     </section>
   </main>

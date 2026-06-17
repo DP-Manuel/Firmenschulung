@@ -8,27 +8,32 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
 
 const processSteps = [
-  { title: "Seminar", text: "Unternehmen steigen über konkrete Weiterbildungsthemen ein." },
-  { title: "Bedarf", text: "Personal- und Kompetenzlücken werden im Gespräch sichtbar." },
-  { title: "Qualifizierung", text: "Bestehende Maßnahmen werden auf reale Anforderungen ausgerichtet." },
-  { title: "Matching", text: "Profile, Kompetenzen und Stellen werden nachvollziehbar abgeglichen." },
-  { title: "Einstieg", text: "Der Start wird begleitet und Erfahrungen fließen zurück." },
+  { title: "Firmenschulung", text: "Ein konkretes Thema schafft den Einstieg in die Zusammenarbeit." },
+  { title: "Bedarfsanalyse", text: "Personalengpässe, Rollen und Kompetenzlücken werden greifbar." },
+  { title: "Qualifizierung", text: "Arbeitsuchende werden gezielt auf reale Firmenbedarfe vorbereitet." },
+  { title: "Vermittlung", text: "Profile und Anforderungen werden passgenau zusammengeführt." },
+  { title: "Feedback", text: "Erfahrungen aus Seminar und Einstieg fließen in die nächsten Schritte." },
 ];
 
 const benefits = [
-  "Seminare als niedrigschwelliger Einstieg",
-  "Bedarfe früher erkennen",
-  "Qualifizierung gezielter planen",
-  "Vermittlung anschlussfähig vorbereiten",
+  "Praxisnaher Einstieg für KMU",
+  "Region Tauberfranken/Würzburg",
+  "Gezielte Personalqualifizierung",
+  "Passgenaue Vermittlung vorbereiten",
 ];
 
-const topics = ["KI im Büroalltag", "Kommunikation", "Führung", "Vertrieb", "Mitarbeitendenbindung"];
+const topics = [
+  "Führung & Mitarbeiterbindung",
+  "Vertrieb & Kundenkommunikation",
+  "Rhetorik & Konfliktmanagement",
+  "Prävention & Resilienz",
+];
 
 const roadmap = [
-  "Firmenprofile und Aufträge",
-  "Seminar- und Coach-Verwaltung",
+  "Firmen, Coaches und Stellen",
+  "Seminaranfragen und Angebote",
   "Angebote und Verträge",
-  "Score-basiertes Matching",
+  "Feedback und Matching",
 ];
 ---
 
@@ -36,15 +41,15 @@ const roadmap = [
   <main>
     <section class="hero hero--showcase">
       <div class="hero__copy">
-        <p class="eyebrow">Modernes Angebot für Unternehmen</p>
-        <h1>Aus Seminaren wird Personalperspektive</h1>
+        <p class="eyebrow">Firmenschulungen für KMU in Tauberfranken/Würzburg</p>
+        <h1>Praxisnahe Schulungen, die Personalbedarf mitdenken</h1>
         <p>
-          Wir verbinden Firmenseminare, Unternehmensbedarf und gezielte
-          Qualifizierung zu einem nachvollziehbaren Weg von der ersten
-          Anfrage bis zur passenden Besetzung.
+          Donner + Partner verbindet Weiterbildung für bestehende Teams mit
+          gezielter Qualifizierung von Arbeitsuchenden, die auf konkrete
+          Unternehmensbedarfe vorbereitet werden.
         </p>
         <div class="actions">
-          <a class="button" href={url("kontakt")}>Beratungsgespräch anfragen</a>
+          <a class="button" href={url("kontakt")}>Kostenfreies Erstgespräch anfragen</a>
           <a class="button button--ghost" href={url("seminare")}>Seminare ansehen</a>
         </div>
       </div>
@@ -54,12 +59,12 @@ const roadmap = [
           alt="Trainerin präsentiert in einem modernen Seminarraum"
         />
         <div class="floating-card floating-card--need">
-          <span>Bedarf erkannt</span>
-          <strong>3 offene Rollen</strong>
+          <span>Bedarfsanalyse</span>
+          <strong>offene Rollen klären</strong>
         </div>
         <div class="floating-card floating-card--score">
-          <span>Matching-Ausblick</span>
-          <strong>86 Punkte</strong>
+          <span>Regionale Stärke</span>
+          <strong>KMU im Fokus</strong>
         </div>
       </div>
     </section>
@@ -77,11 +82,11 @@ const roadmap = [
     <section class="split-panel">
       <div>
         <p class="eyebrow">Warum der Einstieg funktioniert</p>
-        <h2>Seminare schaffen Vertrauen, bevor Vermittlung konkret wird</h2>
+        <h2>Firmenschulungen schaffen Vertrauen, bevor Vermittlung konkret wird</h2>
         <p>
           Unternehmen erhalten sofort nutzbare Weiterbildung. Gleichzeitig
-          entsteht ein Gespräch über echte Personalbedarfe, Qualifizierung und
-          passende nächste Schritte.
+          entsteht ein Gespräch über Personalengpässe, Einarbeitung,
+          Mitarbeiterbindung und passende Qualifizierung.
         </p>
       </div>
       <div class="benefit-grid">
@@ -102,19 +107,19 @@ const roadmap = [
     <section class="app-preview">
       <div>
         <p class="eyebrow">Nach dem 01.07. geplant</p>
-        <h2>Ein eigenes System, nicht nur eine Website</h2>
+        <h2>Ein eigener Systemausblick, ohne produktive Daten</h2>
         <p>
-          Die spätere App soll intern verwalten, was heute mühsam verteilt ist:
-          Firmen, Seminare, Coaches, Teilnehmende, Angebote, Verträge,
-          Matching und Dokumentpakete. Für die Präsentation zeigen wir nur eine
-          realistische Vorschau.
+          Die spätere App kann Seminaranfragen, Firmenprofile, Angebote,
+          Coach-Profile, Stellen, Verträge, Feedback und Matching
+          unterstützen. Für die Präsentation bleibt das eine realistische
+          Vorschau ohne echten Login und ohne Datenbank.
         </p>
         <a class="button button--ghost" href={url("login")}>Login-Demo öffnen</a>
       </div>
       <div class="dashboard-card" aria-label="App-Vorschau">
         <div class="dashboard-card__top">
           <span>Demo-Dashboard</span>
-          <strong>Seminarpipeline</strong>
+          <strong>Bedarfsanalyse</strong>
         </div>
         {roadmap.map((item, index) => (
           <div class="pipeline-row">

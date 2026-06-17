@@ -26,13 +26,20 @@ const modules = [
       <p class="eyebrow">Systemausblick</p>
       <h1>Ein späteres System für Firmen, Coaches und Stellen</h1>
       <p>
-        Der Prototyp zeigt nur die Richtung. Das spätere System soll unabhängig
+        Der Ausblick zeigt die Richtung. Das spätere System soll unabhängig
         arbeiten, eigene Daten nutzen und interne Abläufe rund um Seminare,
         Firmen, Coachprofile, Stellen, Verträge, Feedback und Vermittlung
         schrittweise vereinfachen.
       </p>
       <a class="button" href={url("login")}>Login-Demo ansehen</a>
     </section>
+
+    <figure class="subpage-image">
+      <img
+        src={url("images/digitale-lernplattform.png")}
+        alt="Visualisierung eines digitalen Lern- und Verwaltungssystems"
+      />
+    </figure>
 
     <section class="module-board">
       {modules.map((module) => <article>{module}</article>)}
@@ -44,7 +51,7 @@ const modules = [
         <h2>Keine echte Datenbank, keine echten Accounts</h2>
       </div>
       <p>
-        Für den 01.07. geht es um das Bild: Wie könnte sich die Website in ein
+        Der nächste Schritt ist das Bild: Wie könnte sich die Website in ein
         professionelles System weiterentwickeln? Firmen-, Coach-, Stellen- und
         interne Rollenfunktionen bleiben noch offen und werden nicht als final
         gezeigt.

@@ -18,7 +18,7 @@ const coaches = [
     name: "Coach-Profil 02",
     role: "Vertrieb & Kundenkommunikation",
     focus: "Beratung, Kundengespräch, Auftreten",
-    text: "Demo-Karte für spätere Coachdaten. Die Profile sollen Unternehmen Orientierung geben, ohne im Prototyp personenbezogene Daten zu verarbeiten.",
+    text: "Beispielkarte für spätere Coachdaten. Die Profile sollen Unternehmen Orientierung geben, ohne personenbezogene Daten zu verarbeiten.",
   },
   {
     name: "Coach-Profil 03",
@@ -36,11 +36,18 @@ const coaches = [
       <h1>Menschen hinter den Firmenschulungen sichtbar machen</h1>
       <p>
         Die Coach-Seite zeigt, wie fachliche Profile später vorgestellt werden
-        können. Für den Prototyp bleiben die Profile bewusst anonymisiert:
+        können. In dieser Vorschau bleiben die Profile bewusst anonymisiert:
         echte Namen, Fotos, Rollen und Texte brauchen vorher Freigabe.
       </p>
       <a class="button" href={url("kontakt")}>Coach-Einsatz anfragen</a>
     </section>
+
+    <figure class="subpage-image">
+      <img
+        src={url("images/recruiting.png")}
+        alt="Visualisierung von Recruiting und persönlicher Beratung"
+      />
+    </figure>
 
     <section class="coach-grid" aria-label="Coach-Profilbeispiele">
       {coaches.map((coach) => (

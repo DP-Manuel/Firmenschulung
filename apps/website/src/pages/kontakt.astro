@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
 ---
 
 <BaseLayout title="Kontakt | [Submarke]">
@@ -11,9 +16,14 @@ import "../styles/global.css";
         <h1>Kostenfreies Erstgespräch zur Bedarfsanalyse</h1>
         <p>
           Ob Firmenschulung, Personalengpass oder Qualifizierungsbedarf: Der
-          erste Schritt ist ein kurzes Gespräch. Für die Präsentation bleibt
-          dieses Formular eine visuelle Vorschau ohne echte Verarbeitung.
+          erste Schritt ist ein kurzes Gespräch. Aktuell bleibt dieses
+          Formular eine visuelle Vorschau ohne echte Verarbeitung.
         </p>
+        <img
+          class="contact-page__image"
+          src={url("images/vermittlung.png")}
+          alt="Visualisierung passgenauer Vermittlung"
+        />
       </div>
       <form class="contact-form" aria-label="Kontaktformular Demo">
         <label>

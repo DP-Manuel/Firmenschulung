@@ -2,6 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
+
 const steps = [
   "Schulung oder Erstgespräch als Anlass nutzen",
   "Bedarfsanalyse mit dem Unternehmen durchführen",
@@ -19,10 +24,17 @@ const steps = [
       <p>
         Das Modell verbindet Schulung, Bedarfsanalyse und Vermittlung:
         Arbeitsuchende können in bestehenden Kursen gezielt auf konkrete
-        Anforderungen vorbereitet werden, ohne im Prototyp bereits Lehrpläne
+        Anforderungen vorbereitet werden, ohne zunächst bereits Lehrpläne
         oder produktive Datenflüsse festzulegen.
       </p>
     </section>
+
+    <figure class="subpage-image">
+      <img
+        src={url("images/qualifizierung.png")}
+        alt="Visualisierung gezielter Qualifizierung und Lernbegleitung"
+      />
+    </figure>
 
     <section class="timeline-list">
       {steps.map((step, index) => (

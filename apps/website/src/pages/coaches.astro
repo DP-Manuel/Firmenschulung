@@ -9,22 +9,16 @@ const url = (path = "") => `${base}${path.replace(/^\//, "")}`;
 
 const coaches = [
   {
-    name: "Coach-Profil 01",
-    role: "Führung & Mitarbeiterbindung",
-    focus: "Teamverantwortung, Kommunikation, Veränderung",
-    text: "Platzhalterprofil für eine fachliche Person, die KMU praxisnah begleitet. Echte Namen, Bilder und Qualifikationen werden erst nach Freigabe veröffentlicht.",
-  },
-  {
-    name: "Coach-Profil 02",
-    role: "Vertrieb & Kundenkommunikation",
-    focus: "Beratung, Kundengespräch, Auftreten",
-    text: "Beispielkarte für spätere Coachdaten. Die Profile sollen Unternehmen Orientierung geben, ohne personenbezogene Daten zu verarbeiten.",
-  },
-  {
-    name: "Coach-Profil 03",
-    role: "Prävention & Resilienz",
-    focus: "Belastung, Burnoutprävention, Arbeitsfähigkeit",
-    text: "Die spätere Pflege soll über einen klaren Redaktionsworkflow laufen, damit Inhalte nicht direkt im Code bearbeitet werden müssen.",
+    name: "Christian Galvano",
+    initials: "CG",
+    role: "Dozent, Fachtrainer und Coach",
+    focus: [
+      "Neuroleadership",
+      "Konfliktmanagement",
+      "Stress- und Burnoutprävention",
+    ],
+    text: "Christian Galvano verbindet neurowissenschaftliche Grundlagen mit praxisnahen Methoden für Führung, Kommunikation und gesundes Arbeiten.",
+    profilePath: "coaches/christian-galvano",
   },
 ];
 ---
@@ -33,11 +27,10 @@ const coaches = [
   <main class="subpage">
     <section class="page-hero page-hero--accent">
       <p class="eyebrow">Coaches & Dozenten</p>
-      <h1>Menschen hinter den Firmenschulungen sichtbar machen</h1>
+      <h1>Fachwissen mit Persönlichkeit und Praxiserfahrung</h1>
       <p>
-        Die Coach-Seite zeigt, wie fachliche Profile später vorgestellt werden
-        können. In dieser Vorschau bleiben die Profile bewusst anonymisiert:
-        echte Namen, Fotos, Rollen und Texte brauchen vorher Freigabe.
+        Lernen Sie die Menschen kennen, die unsere Firmenschulungen fachlich
+        fundiert, verständlich und mit Blick auf den Arbeitsalltag gestalten.
       </p>
       <a class="button" href={url("kontakt")}>Coach-Einsatz anfragen</a>
     </section>
@@ -49,18 +42,23 @@ const coaches = [
       />
     </figure>
 
-    <section class="coach-grid" aria-label="Coach-Profilbeispiele">
+    <section class="coach-grid" aria-label="Coaches und Dozenten">
       {coaches.map((coach) => (
-        <article class="coach-card">
+        <article class="coach-card coach-card--featured">
           <div class="coach-card__media" aria-hidden="true">
-            <span>{coach.name.replace("Coach-Profil ", "")}</span>
+            <span>{coach.initials}</span>
           </div>
           <div>
-            <p class="eyebrow">Demo-Profil</p>
+            <p class="eyebrow">Coach & Dozent</p>
             <h2>{coach.name}</h2>
             <strong>{coach.role}</strong>
-            <p>{coach.focus}</p>
+            <ul class="tag-list" aria-label="Themenschwerpunkte">
+              {coach.focus.map((topic) => <li>{topic}</li>)}
+            </ul>
             <p>{coach.text}</p>
+            <a class="button button--ghost" href={url(coach.profilePath)}>
+              Profil ansehen
+            </a>
           </div>
         </article>
       ))}
@@ -69,7 +67,7 @@ const coaches = [
     <section class="showcase-strip">
       <div>
         <p class="eyebrow">Redaktionsausblick</p>
-        <h2>Später nicht direkt im Code pflegen</h2>
+        <h2>Weitere Profile strukturiert ergänzen</h2>
       </div>
       <p>
         Coachprofile sollen langfristig strukturiert gepflegt werden: Name,

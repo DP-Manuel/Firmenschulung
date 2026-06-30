@@ -682,7 +682,7 @@ p {
 }
 
 .coach-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   margin-bottom: 70px;
 }
 
@@ -692,6 +692,11 @@ p {
   padding: 20px;
   border: 1px solid var(--color-line);
   background: var(--color-white);
+}
+
+.coach-card--featured {
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  align-items: stretch;
 }
 
 .coach-card__media {
@@ -705,11 +710,12 @@ p {
 
 .coach-card__media span {
   display: grid;
-  width: 72px;
-  height: 72px;
+  width: 104px;
+  height: 104px;
   place-items: center;
   background: var(--color-white);
   color: var(--color-pantone);
+  font-size: 1.5rem;
   font-weight: 900;
   box-shadow: var(--shadow);
 }
@@ -723,6 +729,132 @@ p {
 .coach-card strong {
   display: block;
   margin-bottom: 12px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 7px 10px;
+  background: var(--color-ice);
+  color: var(--color-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.coach-profile-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: center;
+  padding: clamp(48px, 8vw, 96px) 0 70px;
+}
+
+.coach-profile-hero h1 {
+  margin-bottom: 18px;
+}
+
+.coach-profile-lead {
+  max-width: 760px;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 800;
+}
+
+.coach-profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.coach-profile-monogram {
+  display: grid;
+  min-height: 390px;
+  padding: 32px;
+  place-items: center;
+  align-content: center;
+  gap: 22px;
+  background:
+    linear-gradient(145deg, rgba(0, 156, 166, 0.88), rgba(0, 156, 166, 0.62)),
+    var(--color-pantone);
+  color: var(--color-white);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.coach-profile-monogram span {
+  display: grid;
+  width: 150px;
+  height: 150px;
+  place-items: center;
+  border: 3px solid var(--color-white);
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.coach-profile-monogram small {
+  max-width: 250px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.coach-profile-section {
+  padding: 24px 0 70px;
+}
+
+.coach-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.coach-topic-grid article {
+  padding: 26px;
+  border-top: 8px solid var(--color-red);
+  background: var(--color-soft);
+}
+
+.coach-topic-grid h3 {
+  margin-bottom: 12px;
+}
+
+.coach-credentials {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(30px, 6vw, 72px);
+  margin-bottom: 70px;
+  padding: clamp(28px, 5vw, 52px);
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.coach-credentials h2 {
+  color: var(--color-white);
+}
+
+.coach-credentials ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.coach-profile-cta > div:last-child {
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+}
+
+.coach-profile-cta p {
+  margin: 0;
 }
 
 .timeline-list {
@@ -906,7 +1038,9 @@ p {
   .app-preview,
   .showcase-strip,
   .contact-page,
-  .login-panel {
+  .login-panel,
+  .coach-profile-hero,
+  .coach-credentials {
     grid-template-columns: 1fr;
   }
 
@@ -915,8 +1049,17 @@ p {
   .topic-wall,
   .seminar-topic-grid,
   .module-board,
-  .coach-grid {
+  .coach-grid,
+  .coach-topic-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .coach-card--featured {
+    grid-template-columns: minmax(180px, 0.45fr) minmax(0, 1fr);
+  }
+
+  .coach-profile-monogram {
+    min-height: 300px;
   }
 
   .seminar-offer {
@@ -1011,12 +1154,25 @@ p {
   .seminar-topic-grid,
   .module-board,
   .coach-grid,
+  .coach-topic-grid,
   .benefit-grid,
   .contact-form,
   .login-preview-list,
   .dashboard-teaser,
   .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .coach-card--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .coach-profile-actions .button {
+    width: 100%;
+  }
+
+  .coach-profile-monogram {
+    min-height: 260px;
   }
 
   .seminar-catalog {

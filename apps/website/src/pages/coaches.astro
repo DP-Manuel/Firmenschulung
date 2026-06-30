@@ -25,28 +25,33 @@ const coaches = [
 
 <BaseLayout title="Coaches | [Submarke]">
   <main class="subpage">
-    <section class="page-hero page-hero--accent">
-      <p class="eyebrow">Coaches & Dozenten</p>
-      <h1>Fachwissen mit Persönlichkeit und Praxiserfahrung</h1>
-      <p>
-        Lernen Sie die Menschen kennen, die unsere Firmenschulungen fachlich
-        fundiert, verständlich und mit Blick auf den Arbeitsalltag gestalten.
-      </p>
-      <a class="button" href={url("kontakt")}>Coach-Einsatz anfragen</a>
+    <section class="page-hero page-hero--accent coach-list-hero">
+      <div>
+        <p class="eyebrow">Coaches & Dozenten</p>
+        <h1>Fachwissen mit Persönlichkeit und Praxiserfahrung</h1>
+        <p>
+          Lernen Sie die Menschen kennen, die unsere Firmenschulungen fachlich
+          fundiert, verständlich und mit Blick auf den Arbeitsalltag gestalten.
+        </p>
+        <a class="button" href={url("kontakt")}>Coach-Einsatz anfragen</a>
+      </div>
+      <aside class="coach-list-hero__note" aria-label="Unser Anspruch">
+        <span>Unser Anspruch</span>
+        <strong>Fachlich fundiert.<br />Praxisnah.<br />Persönlich.</strong>
+      </aside>
     </section>
-
-    <figure class="subpage-image">
-      <img
-        src={url("images/recruiting.png")}
-        alt="Visualisierung von Recruiting und persönlicher Beratung"
-      />
-    </figure>
 
     <section class="coach-grid" aria-label="Coaches und Dozenten">
       {coaches.map((coach) => (
         <article class="coach-card coach-card--featured">
-          <div class="coach-card__media" aria-hidden="true">
-            <span>{coach.initials}</span>
+          <div class="coach-card__media">
+            <img
+              src={url("images/coaches/christian-galvano.webp")}
+              alt="Porträt von Christian Galvano"
+              width="830"
+              height="830"
+              loading="lazy"
+            />
           </div>
           <div>
             <p class="eyebrow">Coach & Dozent</p>
@@ -64,17 +69,20 @@ const coaches = [
       ))}
     </section>
 
-    <section class="showcase-strip">
+    <section class="showcase-strip coach-list-cta">
       <div>
-        <p class="eyebrow">Redaktionsausblick</p>
-        <h2>Weitere Profile strukturiert ergänzen</h2>
+        <p class="eyebrow">Individuell zusammenstellen</p>
+        <h2>Passenden Coach finden</h2>
       </div>
-      <p>
-        Coachprofile sollen langfristig strukturiert gepflegt werden: Name,
-        Rolle, Themenschwerpunkte, Qualifikation, Einsatzregion, Bild und
-        Freigabestatus. Ob das über CMS, Webapp oder API passiert, bleibt eine
-        Entscheidung vor dem Live-Betrieb.
-      </p>
+      <div>
+        <p>
+          Wir stimmen Fachgebiet, Zielgruppe und Format auf die konkrete
+          Situation in Ihrem Unternehmen ab.
+        </p>
+        <a class="button" href={url("kontakt")}>
+          Kostenfreies Erstgespräch anfragen
+        </a>
+      </div>
     </section>
   </main>
 </BaseLayout>
